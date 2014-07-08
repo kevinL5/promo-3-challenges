@@ -4,14 +4,15 @@
 require_relative './age_in_days'
 
 ### Talking with the user ###
-puts 'What\'s your year of birth ?'
-birth_year = gets.chomp.to_i
 
-puts 'What\'s your month of birth ?'
-birth_month = gets.chomp.to_i
+def question(param)
+  puts "What's your #{param} of birth ?"
+  gets.chomp.to_i
+end
 
-puts 'What\'s your day of birth ?'
-birth_day = gets.chomp.to_i
+birth_year = question('year')
+birth_month = question('month')
+birth_day = question('day')
 #############################
 
 puts 'Computing your age (with the most complicated algorithms)........'
