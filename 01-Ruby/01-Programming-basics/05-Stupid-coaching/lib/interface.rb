@@ -6,7 +6,7 @@ puts "I'm your coach. You could ask me anything !"
 my_answer = gets.chomp
 
 until my_answer == "I am going to work right now SIR !"
-  puts coach_answer(my_answer)
+  puts coach_answer_enhanced(my_answer)
   puts "I'm your coach. You could ask me anything !"
   my_answer = gets.chomp
 end
