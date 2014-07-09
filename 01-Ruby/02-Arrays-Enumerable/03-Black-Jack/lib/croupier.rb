@@ -25,13 +25,8 @@ def asking_for_card?(score)
   if score < 21
     puts "Card ? (type 'Y' or 'yes' for a new card)"
     answer = gets.chomp
-      if answer == 'Y' || answer == 'yes'
-        true
-      else
-        false
-      end
+    answer == 'Y' || answer == 'yes'
   else
-    # build_message_for(total)
     false
   end
 end
