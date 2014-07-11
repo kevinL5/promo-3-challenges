@@ -1,3 +1,4 @@
+
 def poor_calories_counter(burger, side, beverage)
   #TODO: return number of calories for this mcDonald order
   domc = {
@@ -14,8 +15,10 @@ def poor_calories_counter(burger, side, beverage)
   calories = domc[burger] + domc[side] + domc[beverage]
 end
 
+
 def calories_counter(*orders)
   #TODO: return number of calories for a less constrained order
+
   domc = {
     "Cheese Burger" => 290,
     "Big Mac" => 300,
@@ -25,11 +28,10 @@ def calories_counter(*orders)
     "Potatoes" => 130,
     "Coca" => 160,
     "Sprite" => 170,
-    #"Happy Meal" => domc["Cheese Burger" ] + domc["French fries"] + domc["Coca"]
-    "Happy Meal" => 580
+    "Happy Meal" => poor_calories_counter("Cheese Burger", "French fries", "Coca"),
+    "Best Of Big Mac" => poor_calories_counter("Big Mac", "French fries", "Coca"),
+    "Royal Cheese" => poor_calories_counter("Royal Cheese", "Potatoes", "Sprite")
     }
-
-
 
   product_calories = 0
 
