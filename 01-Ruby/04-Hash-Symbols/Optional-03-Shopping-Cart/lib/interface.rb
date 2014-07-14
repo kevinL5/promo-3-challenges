@@ -3,7 +3,7 @@ require_relative 'cart'
 
 # TODO: find the correct data structure to hold the content of your shopping cart
 # instead of using nil below
-cart = nil
+cart = []
 
 puts 'Here are the available products:'
 puts store_items_to_s
@@ -19,6 +19,7 @@ while true
 
   if is_product_in_store?(product)
     add_to_cart(cart, product)
+    puts "You buy #{product} for #{price_of_product(product)}€"
   else
     # otherwise show error
     puts "We don't have any #{product} in store, sorry!"
@@ -32,3 +33,4 @@ puts cart_to_s(cart)
 
 total = cart_total_price(cart, store_items)
 puts "Total price: #{total}€"
+puts cart
