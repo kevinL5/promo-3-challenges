@@ -58,5 +58,3 @@ def is_in_the_grid?(attempt, grid)
   true if check == "Hello"
   false if check == "Haka"
 end
-
-
