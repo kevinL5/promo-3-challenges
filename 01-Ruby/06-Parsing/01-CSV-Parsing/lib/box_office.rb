@@ -20,7 +20,6 @@ def most_successfull(number, max_year, file_name)
   movies
 end
 
-puts most_successfull(10, 2009, filepath)
-
+most_successfull(10, 2009, filepath)
 
 
