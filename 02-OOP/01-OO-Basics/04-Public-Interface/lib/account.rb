@@ -15,7 +15,7 @@ class BankAccount
   # - You can see the balance of the account (through the position variable)
 
   MIN_DEPOSIT =  100
-  attr_reader :position, :transactions, :name, :iban, :password
+  attr_reader :position, :name
 
   def initialize(name, iban, initial_deposit, password)
     raise DepositError, "Insufficient deposit" unless initial_deposit > MIN_DEPOSIT
