@@ -1,3 +1,5 @@
+require 'time'
+
 # Optional
 class Transaction
   def initialize(amount)
@@ -10,6 +12,6 @@ class Transaction
 
   def to_s
     # Nicely print transaction infos using Time#strftime.
-    "#{@amount} at #{@time.strftime("%Y-%d-%m")} #{@time.strftime("%H:%M:%S %Z")}"
+    @time.strftime("#{@amount} on %Y-%d-%m at %H:%M:%S")
   end
 end

@@ -1,3 +1,5 @@
+require_relative 'transaction'
+
 # This is how you define your own custom exception classes
 class DepositError < StandardError
 end
@@ -70,8 +72,7 @@ class BankAccount
   def add_transaction(amount)
     # TODO: add the amount in the transactions array
     # TODO: update the current position (which represents the balance of the account)
-    @transactions << amount
+    @transactions << Transaction.new(amount)
     @position += amount
   end
-
 end
