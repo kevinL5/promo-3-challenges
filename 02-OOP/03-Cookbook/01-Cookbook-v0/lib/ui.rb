@@ -2,14 +2,17 @@ class UI
 
   def ask_display_recipes(recipes)
     recipes.each_with_index do |recipe, index|
-      puts "#{index + 1} - #{recipe}"
+      puts "#{index} - #{recipe}"
     end
   end
 
   def ask_add_recipe
     puts "Please, add a new recipe:"
-    recipe = gets.chomp
-    return recipe
+    name = gets.chomp
+    puts "Add a description of your recipe:"
+    description = gets.chomp
+
+    Recipe.new(name, description)
   end
 
   def delete_a_recipe
@@ -18,8 +21,3 @@ class UI
     return index
   end
 end
-
-array_test = ['Fish & Chips', 'Paela', 'Hamburger']
-ui = UI.new
-ui.display_recipes(array_test)
-

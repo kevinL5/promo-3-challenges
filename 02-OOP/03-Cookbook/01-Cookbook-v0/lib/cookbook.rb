@@ -1,4 +1,5 @@
 require 'csv'
+require_relative 'recipe'
 require 'awesome_print'
 
 class Cookbook
@@ -17,36 +18,38 @@ class Cookbook
 
   def retrieve
     CSV.foreach(@file) do |row|
-      @list_recipes << row[0]
+      @list_recipes << [row[0], row[1]]
     end
   end
 
+  def list_of_all_recipes
+    @list_recipes
+  end
 
-  def create(recipe)
-    @list_recipes << recipe
+  def add_recipe(recipe)
+    @list_recipes << [recipe.name, recipe.description]
 
     save
   end
 
-  def destroy(recipe)
-    @list_recipes.delete(recipe)
+  def remove_recipe(index)
+    @list_recipes.delete_at(index)
 
     save
   end
 
   def save
-    CSV.open(@file, 'w') do |csv|
+    CSV.open(@file, 'w', col_sep: ',') do |csv|
       @list_recipes.each do |recipe|
-        csv << [recipe]
+        csv << recipe
       end
     end
   end
 
 end
 
-cookbook = Cookbook.new('recipes.csv')
-cookbook.create('Fish')
-cookbook.create('Chips')
-cookbook.destroy('Fish')
-
 #ap cookbook.list_recipes
+
+
+
+
