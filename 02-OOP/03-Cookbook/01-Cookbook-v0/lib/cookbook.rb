@@ -3,12 +3,12 @@ require_relative 'recipe'
 require 'awesome_print'
 
 class Cookbook
-  attr_reader :list_recipes
+  attr_reader :recipes
 
   def initialize(file)
     # TODO: Retrieve the data from your CSV file and store it in an instance variable
     @file = file
-    @list_recipes = []
+    @recipes = []
     retrieve
   end
 
@@ -18,29 +18,29 @@ class Cookbook
 
   def retrieve
     CSV.foreach(@file) do |row|
-      @list_recipes << [row[0], row[1]]
+      @recipes << [row[0], row[1]]
     end
   end
 
   def list_of_all_recipes
-    @list_recipes
+    @recipes
   end
 
   def add_recipe(recipe)
-    @list_recipes << [recipe.name, recipe.description]
+    @recipes << [recipe.name, recipe.description]
 
     save
   end
 
   def remove_recipe(index)
-    @list_recipes.delete_at(index)
+    @recipes.delete_at(index)
 
     save
   end
 
   def save
     CSV.open(@file, 'w', col_sep: ',') do |csv|
-      @list_recipes.each do |recipe|
+      @recipes.each do |recipe|
         csv << recipe
       end
     end
