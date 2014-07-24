@@ -21,7 +21,7 @@ class Cookbook
 
   def retrieve
     CSV.foreach(@file) do |row|
-      @recipes << [row[0], row[1], row[3]]
+      @recipes << [row[0], row[1], row[2]]
     end
   end
 
