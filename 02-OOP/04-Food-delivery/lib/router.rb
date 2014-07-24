@@ -2,6 +2,8 @@ require_relative 'controller'
 
 class Router
 
+  attr_reader :username
+
   def initialize
     @controller = Controller.new
     @running = true
@@ -55,10 +57,12 @@ class Router
   end
 
   def login
-    puts "Please enter your username:"
-    @username = gets.chomp
+    puts "Please enter your employee ID:"
+    @employee_id = gets.chomp.to_i
     puts "Please enter your password:"
     @password = gets.chomp
+
+
 
   end
 

@@ -5,6 +5,7 @@ require_relative 'manager'
 require_relative 'delivery_guy'
 require_relative 'customer'
 require_relative 'order'
+require_relative 'router'
 
 class Controller
 
@@ -53,6 +54,11 @@ class Controller
   def list_employee
     employees = @manager.list_employees
     @view.ask_list_employee(employees)
+  end
+
+  def view_order_delivery
+    orders_delivery = @delivery_guy.view_orders(@router.employee_id)
+    @view.ask_view_order_delivery(orders_delivery)
   end
 
 end

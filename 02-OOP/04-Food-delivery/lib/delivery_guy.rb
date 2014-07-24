@@ -1,14 +1,15 @@
 class DeliveryGuy < Employee
 
-  attr_accessor :delivery_orders
+  attr_accessor :order_delivery
 
   def initialize(name, password, restaurant)
     super
+    @order_delivery = []
   end
 
   def view_orders(employee_id)
     @restaurant.orders.find_all do |order|
-      @order_delivery = order.employee_id == employee_id
+      @order_delivery << order.employee_id == employee_id
     end
     @order_delivery
   end
