@@ -2,6 +2,10 @@ require_relative 'config/application'
 require_relative 'models/post'
 require_relative 'models/user'
 
+User.where(name: 'Jean', email: 'jean@monmail.com').first_or_create
+
+p User.last
+
 def ask(prompt)
   print "#{prompt} "
   gets.to_s.chomp
@@ -20,7 +24,9 @@ end
 
 def list_posts(user)
   # TODO: use ActiveRecord to get all posts of the current user
-  p user.posts
+  user.posts.each do |post|
+    puts '%-5d %-15s %-20s %-30s %-5d' % [post['id'], post['name'], post['source_url'], post['date'], post['rating']]
+  end
 end
 
 def delete_posts(user)
@@ -28,7 +34,14 @@ def delete_posts(user)
   user.posts.destroy_all
 end
 
-user = User.create(name: 'Jean', email: 'jean@icq.com')
+logged_in = false
+
+until logged_in
+  puts 'Please login with your Id'
+  user_input = gets.chomp.to_i
+  logged_in = true
+  user = User.find(user_input)
+end
 
 while true
 
