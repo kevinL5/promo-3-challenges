@@ -31,7 +31,7 @@ def get_posts
 >>>>>>> 56bb70681e2594f68796a84853debe0562f0f006
 
   posts.each do |post|
-    puts '%-3d %-15s %-20s %-30s %d' % [post['id'], post['name'], post['source_url'], post['created_at'], post['rating']]
+    puts '%-3d %-15s %-20s %-30s %d' % [post['name'], post['source_url'], post['date'], post['rating']]
   end
 
   puts '-' * 50
