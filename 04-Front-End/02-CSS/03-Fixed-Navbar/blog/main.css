@@ -3,3 +3,36 @@
   width: 840px;
 	font-family: 'Open Sans', sans-serif;
 }
+
+header {
+background-color: #000;
+color: #FFF;
+position: fixed;
+right: 0px;
+left: 0px;
+}
+
+header h1 {
+  display: inline-block;
+  width: 500px;
+}
+
+.nav-content {
+  margin: 0 auto;
+  width: 840px;
+}
+
+nav {
+  display: inline-block;
+}
+
+nav a {
+  display: inline-block;
+  width: 100px;
+  line-height: 100px;
+  color: white;
+}
+
+.content {
+  padding-top: 110px;
+}
