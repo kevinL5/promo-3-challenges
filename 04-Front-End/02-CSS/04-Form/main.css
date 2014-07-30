@@ -1,6 +1,39 @@
+body {
+  background-image: url("http://thepatternlibrary.com/img/an.jpg")
+}
+
 .container {
-  margin: 0 auto;  
+  margin: 0 auto;
   width: 840px;
 }
 
-/*Add some CSS rules to design your form */ 
+form {
+  position: absolute;
+  margin:auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 20px;
+  width: 270px;
+  height: 250px;
+  background-color: #AA3C39;
+  border-radius: 10px;
+}
+
+#button {
+  background-color: white;
+  position: absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  margin-top:15px;
+  padding: 5px;
+}
+
+p {
+  color: white;
+  font-family: ;
+  text-align: center;
+}
+/*Add some CSS rules to design your form */
