@@ -1,0 +1,82 @@
+body {
+  background:url(images/grid.jpg);
+}
+
+.clearmargin {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.wrapper {
+  height: 650px;
+  background-image: url(images/background.jpg);
+  background-size: cover;
+  padding-top: 150px;
+}
+
+
+.wrapper h1 {
+  font-size: 72px;
+  color: white;
+  font-weight: normal;
+  text-shadow: 0px 0px 20px rgba(0,0,0, 0.8);
+}
+
+.wrapper h2 {
+  margin: 1em 0;
+}
+
+.wrapper h2 span{
+  padding: 0.2em;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+.wrapper .btn-primary {
+  color: white;
+  background-color: #1ABC9C;
+  border-color: #1ABC9C;
+  padding: 9px 16px;
+  font-size: 18px;
+}
+
+.content {
+  padding-top: 8em;
+}
+
+.feature {
+  padding: 0 15px;
+}
+
+.onboarding {
+  padding: 8em 0;
+}
+
+.onboarding h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+footer {
+  height: 150px;
+  background-color: #000;
+  color: #AAA;
+  padding-top: 45px;
+}
+
+footer a {
+  font-size: 24px;
+  color: #AAA;
+}
+
+footer a:hover {
+  color: #FFF;
+}
+
+footer h3 {
+  font-size: 14px;
+}
+
